@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HW7B</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h2>HW7B</h2>
+
+<p>Use a WHILE  loop inside startProcess to iterate i=0-9</p>
+
+<script>
+/*
+ * Cleveland Codes - HW7B
+ *
+ * This script will display the volume size to the user using document.write();
+ *
+ */
+ function startProcess (){
+	var i=0;
+	var volumeSize;
+	var volume;
+	while (i <= 9){
+		length = i + 2;
+		width  = i + 3;
+		height = i + 4;
+		volume = getVolume(length,width,height);
+		
+		if (volume < 60) {
+			volumeSize = "undefined";
+		}
+		else
+		if (volume >= 60 && volume <= 70) {
+			volumeSize = "small";
+		}
+		else
+		if (volume >= 71 && volume <= 80) {
+			volumeSize = "medium";
+		}
+		else
+		if (volume >= 81 && volume <= 90)  {
+			volumeSize = "large";
+		}
+		if (volume >= 91 && volume <= 100) {
+			volumeSize = "extra large";
+		}
+		else
+		if (volume > 100) {
+			volumeSize = "undefined";
+		}
+
+		switch (volumeSize) {
+			case "small":
+				document.write("Your volume is Small; Volume = " + volume  + "<br />");
+				break;
+			case "medium":
+				document.write("Your volume is Medium; Volume = " + volume  + "<br />");
+				break;
+			case "large":
+				document.write("Your volume is Large; Volume = " + volume  + "<br />");
+				break;
+			case "extra large":
+				document.write("Your volume is Extra Large Volume; Volume = " + volume  + "<br />");
+				break;
+			default:
+				document.write("Your volume is an undefined volume; Volume = "  + volume + "<br />");	
+		}
+		i++;
+	}
+ }
+ 
+ function getVolume(length,width,height) {
+	var volume = (length * width * height);
+	return volume;
+}
+startProcess();
+ </script>
+ 
+ </body>
+ </html>
